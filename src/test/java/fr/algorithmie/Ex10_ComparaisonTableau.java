@@ -1,21 +1,26 @@
 package fr.algorithmie;
 
+import static org.hamcrest.CoreMatchers.instanceOf;
+
+import java.util.concurrent.CountDownLatch;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import outils.Exercice;
 import outils.ExerciceRunner;
 import outils.Question;
+import outils.Resultat;
 
 /**
- * Ne modifiez ni les noms des classes, ni les noms des méthodes.
- * Utilisez Resultat.log pour afficher les résultats
+ * Ne modifiez ni les noms des classes, ni les noms des méthodes. Utilisez
+ * Resultat.log pour afficher les résultats
  * 
  * @author DIGINAMIC
  *
  */
 @RunWith(ExerciceRunner.class)
-@Exercice(nom="ComparaisonTableau")
+@Exercice(nom = "ComparaisonTableau")
 public class Ex10_ComparaisonTableau {
 
 	int[] array1 = { 1, 15, -3, 8, 7, 4, -2, 28, -1, 17, 2, 3, 0, 14, -4 };
@@ -29,7 +34,23 @@ public class Ex10_ComparaisonTableau {
 	public void calculerElementsCommuns() {
 
 		// TODO LOGUER le nombre de valeurs communes aux 2 tableaux.
-		// Exemple : On peut déjà voir que les valeurs 3 et 8 sont communes aux 2 tableaux, mais
+		// Exemple : On peut déjà voir que les valeurs 3 et 8 sont communes aux 2
+		// tableaux, mais
 		// Combien y en a t'il au total ?
+
+		int count = 0;
+
+		for (int i = 0; i <= array1.length - 1; i++) {
+
+			for (int j = 0; j <= array2.length - 1; j++) {
+
+				if (array1[i] == array2[j]) {
+
+					count++;
+
+				}
+			}
+		}
+		Resultat.log(count);
 	}
 }

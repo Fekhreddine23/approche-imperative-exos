@@ -34,6 +34,23 @@ public class Ex16_InteractifTantQue {
 		// Si ce nombre est compris entre 1 et 10, l'application LOGUE le résultat 
 		// et s'arrête.
 		
+		 
+		 int n;
+		
+		  
+		do {
+			 
+			System.out.println("Veuillez saisir un nombre : ");
+			n = scanner.nextInt();
+			 if(n > 0 && n < 10) {
+				 Resultat.log(n);
+				 
+			 }
+			
+			
+		} while(n < 0 || n > 10);
+		
+		
 		scanner.close();
 	}
 

@@ -6,6 +6,8 @@ import org.junit.runner.RunWith;
 import outils.Exercice;
 import outils.ExerciceRunner;
 import outils.Question;
+import outils.Resultat;
+
 
 /**
  * Ne modifiez ni les noms des classes, ni les noms des méthodes.
@@ -15,7 +17,7 @@ import outils.Question;
  *
  */
 @RunWith(ExerciceRunner.class)
-@Exercice(nom="FirstLast6")
+@Exercice(nom = "FirstLast6")
 public class Ex11_FirstLast6 {
 
 	int[] tab1 = {};
@@ -27,18 +29,37 @@ public class Ex11_FirstLast6 {
 
 	/**
 	 * Ne pas modifier les informations portées par l'annotation. AU TOTAL : 6
+	 * @return 
 	 */
 	@Test
 	@Question(numero = 1)
 	public void afficherAlgo() {
 
-		// TODO Calculez une valeur booléenne qui contrôle le tableau de la sorte :
+		// TODO Calculez une valeur booléenne qui renvoi le tableau de la sorte :
 		//  o elle vaut true si le tableau a au moins 1 élément et si le premier élément ou le dernier élément vaut 6.
 		//  o elle vaut false dans les autres cas
-
-
-		// TODO LOGUEZ la valeur obtenue pour chacun des 6 tableaux tab1 à tab6
-
+		
+		
+		Resultat.log(AlgoCheck(tab1));
+		Resultat.log(AlgoCheck(tab2));
+		Resultat.log(AlgoCheck(tab3));
+		Resultat.log(AlgoCheck(tab4));
+		Resultat.log(AlgoCheck(tab5));
+		Resultat.log(AlgoCheck(tab6));
+		
 	}
-
+	
+		public boolean AlgoCheck(int[] tab) {
+			boolean verif;
+			
+			if (tab.length != 0 && ( tab[0] == 6 || tab[tab.length-1] == 6 ) ) {
+				verif = true;
+			} else {
+				verif = false;
+			}
+			
+			return verif;
+					
+		}
+		
 }
